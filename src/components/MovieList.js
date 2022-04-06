@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import movieService from "../services/MovieService";
 import { moviesSelector } from "../store/movie/selectors";
 import { setMovies } from "../store/movie/slice";
+import MovieRow from "../components/MovieRow";
 
 const MovieList = () => {
     const dispatch = useDispatch();
