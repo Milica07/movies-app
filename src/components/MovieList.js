@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import movieService from "../services/MovieService";
-import { selectMovies } from "../store/movie/selectors";
+import { moviesSelector } from "../store/movie/selectors";
 import { setMovies } from "../store/movie/slice";
 
 const MovieList = () => {
     const dispatch = useDispatch();
 
-    const movies = useSelector(selectMovies);
+    const movies = useSelector(moviesSelector);
     const handleSetMovies = (movies) => dispatch(setMovies(movies));
 
     useEffect(() => {
@@ -20,7 +20,11 @@ const MovieList = () => {
     handleSetMovies(data);
   };
   return (
-    <div>MovieList</div>
+    <div>
+      {movies.map((movie) => (
+        <MovieRow movie={movie} />
+      ))}
+    </div>
   )
 }
 
