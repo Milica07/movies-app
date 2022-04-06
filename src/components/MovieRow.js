@@ -11,7 +11,7 @@ const MovieRow = ({movie}) => {
     <div>
         <input
           type="checkbox"
-          value={isSelected}
+          checked={isSelected}
           onChange={() => dispatch(toggleSelectMovie(movie.id))}
         />
         <p>Title: {movie.title}</p>
