@@ -17,9 +17,9 @@ const MovieList = () => {
     }, []);
 
     const fetchMovies = async () => {
-    const data = await movieService.getAll();
+      const data = await movieService.getAll();
 
-    handleSetMovies(data);
+      handleSetMovies(data);
   };
   return (
     <div>

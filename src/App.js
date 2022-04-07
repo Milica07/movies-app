@@ -5,6 +5,7 @@ import MovieSearch from './components/MovieSearch';
 import { useDispatch, useSelector } from "react-redux";
 import { selectedMoviesCount } from "./store/movie/selectors";
 import { deselectAll, selectedAll } from "./store/movie/slice";
+import MovieSort from "./components/MovieSort";
 
 function App() {
   const count = useSelector(selectedMoviesCount);
@@ -23,6 +24,9 @@ function App() {
             </li>
             <button onClick={() => dispatch(deselectAll())}>Deselect all</button>
             <button onClick={() => dispatch(selectedAll())}>Select all</button>
+            <li>
+              <MovieSort/>
+            </li>
           </ul>
         </nav>
         <Switch>

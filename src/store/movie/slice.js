@@ -6,6 +6,7 @@ const movieSlice = createSlice({
     movies: [],
     searchValue: "",
     selectedMovies: [],
+    sortBy: "",
   },
   reducers: {
     setMovies: (state, action) => {
@@ -27,9 +28,13 @@ const movieSlice = createSlice({
     selectedAll: (state) => {
       state.selectedMovies = state.movies.map((movie) => movie.id);
     },
+    setSortBy: (state, action) => {
+      state.sortBy = action.payload
+    }
+
   },
 });
 
-export const { setMovies, setSearchValue, toggleSelectMovie, deselectAll, selectedAll } = movieSlice.actions;
+export const { setMovies, setSearchValue, toggleSelectMovie, deselectAll, selectedAll, setSortBy } = movieSlice.actions;
 
 export default movieSlice.reducer;

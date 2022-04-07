@@ -16,7 +16,7 @@ const MovieRow = ({movie}) => {
         />
         <p>Title: {movie.title}</p>
         <p>Director: {movie.director}</p>
-        <img src={movie.imageUrl} />
+        <img style={{width:"150px"}} className="img" src={movie.imageUrl} alt={movie.imageUrl}/>
         <p>Release date: {movie.releaseDate}</p>
         <p>Genre: {movie.genre}</p>
         <p>Duration: {movie.duration}</p>
